@@ -9,6 +9,7 @@ import 'components/primary_button.dart';
 
 class EditDetails extends StatefulWidget {
   EditDetails({super.key, required this.personalBook});
+
   PersonalBook personalBook;
 
   @override
@@ -24,6 +25,7 @@ class _EditDetailsState extends State<EditDetails> {
   @override
   void initState() {
     super.initState();
+    // Fill with book info
     if(widget.personalBook.comments != ""){
       commentsController.text = widget.personalBook.comments;
     }

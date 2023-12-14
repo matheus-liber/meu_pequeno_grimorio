@@ -2,10 +2,11 @@
 
 import 'dart:convert';
 
-import 'package:grimorio/models/google_book.dart';
-import 'package:grimorio/models/personal_book.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
+
+import '../models/personal_book.dart';
+import '../services/google_book_service.dart';
 
 
 class PersonalBookDatabase {

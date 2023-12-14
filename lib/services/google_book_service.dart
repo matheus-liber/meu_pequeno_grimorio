@@ -1,7 +1,8 @@
 import 'dart:convert';
 
-import 'package:grimorio/models/google_book.dart';
 import 'package:http/http.dart' as http;
+
+import '../models/google_book.dart';
 
 class GoogleBooksService {
   static const String baseUrl = "https://www.googleapis.com/books/v1/volumes";
@@ -23,5 +24,3 @@ class GoogleBooksService {
     return List.empty();
   }
 }
-
-
