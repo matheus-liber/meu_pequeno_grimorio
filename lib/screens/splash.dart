@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grimorio/route_transitions.dart';
 import 'package:grimorio/screens/dashboard.dart';
 import 'package:grimorio/theme.dart';
 
@@ -51,17 +52,25 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 
-  waitAndShow(){
-    Future.delayed(const Duration(milliseconds: 750)).then((value){
+  waitAndShow() {
+    Future.delayed(const Duration(milliseconds: 750)).then((value) {
       setState(() {
         imageOpacity = 1;
       });
       waitAndNextScreen();
     });
   }
-  waitAndNextScreen(){
-    Future.delayed(Duration(milliseconds: timeToAnimationInMilliseconds + 300)).then((value) {
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const Dashboard()));
+
+  waitAndNextScreen() {
+    Future.delayed(Duration(milliseconds: timeToAnimationInMilliseconds + 300))
+        .then((value) {
+      Navigator.of(context).pushReplacement(
+        slideTransitionRoute(
+          const Dashboard(),
+          beginPosition: const Offset(1, 0),
+          duration: const Duration(milliseconds: 2000)
+        ),
+      );
     });
   }
 }
